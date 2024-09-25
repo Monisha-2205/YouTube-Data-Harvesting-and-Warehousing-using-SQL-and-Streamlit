@@ -11,7 +11,7 @@ class Youtube:
     def __init__(self, channel_id):
         self.api_service_name = "youtube"
         self.api_version = "v3"
-        self.youtube_api_key = "YOUR_API_KEY"  # Replace with your actual API key
+        self.youtube_api_key = "AIzaSyAAJGuRjLnpKi59PDK9TlAYet686Xc1cCE"  # Replace with your actual API key
 
         self.youtube = googleapiclient.discovery.build(self.api_service_name, self.api_version, developerKey=self.youtube_api_key)
 
@@ -20,11 +20,11 @@ class Youtube:
         self.db = pymysql.connect(
             host="localhost",
             user="root",
-            password="Monisha8080!",  # Replace with your actual MySQL password
+            password="root",  # Replace with your actual MySQL password
             connect_timeout=10
         )
 
-        self.mysql = "mysql+pymysql://root:Monisha8080!localhost/youtube"  # Replace with your MySQL connection details
+        self.mysql = "mysql+pymysql://root:root@localhost/youtube"  # Replace with your MySQL connection details
         self.engine = create_engine(self.mysql)
 
         self.connect = self.db.cursor()
